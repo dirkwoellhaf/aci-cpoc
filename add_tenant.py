@@ -34,10 +34,22 @@ cookies['APIC-Cookie'] = auth_token
 
 
 #BD
-bd = {"totalCount":"1","imdata":[{"fvBD":{"attributes":{"arpFlood":"no","descr":"","dn":"uni/tn-A40_n900/BD-core_bd_2","epMoveDetectMode":"","limitIpLearnToSubnets":"no","llAddr":"::","mac":"00:22:BD:F8:19:FF","multiDstPktAct":"bd-flood","name":"core_bd_2","ownerKey":"","ownerTag":"","unicastRoute":"no","unkMacUcastAct":"proxy","unkMcastAct":"flood","vmac":"not-applicable"},"children":[{"fvRsBDToNdP":{"attributes":{"tnNdIfPolName":""}}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"n900_vrf_prod"}}},{"fvRsIgmpsn":{"attributes":{"tnIgmpSnoopPolName":""}}},{"fvRsBdToEpRet":{"attributes":{"resolveAct":"resolve","tnFvEpRetPolName":""}}}]}}]}
+#bd = {"totalCount":"1","imdata":[{"fvBD":{"attributes":{"arpFlood":"no","descr":"","dn":"uni/tn-A40_n900/BD-core_bd_2","epMoveDetectMode":"","limitIpLearnToSubnets":"no","llAddr":"::","mac":"00:22:BD:F8:19:FF","multiDstPktAct":"bd-flood","name":"core_bd_2","ownerKey":"","ownerTag":"","unicastRoute":"no","unkMacUcastAct":"proxy","unkMcastAct":"flood","vmac":"not-applicable"},"children":[{"fvRsBDToNdP":{"attributes":{"tnNdIfPolName":""}}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"n900_vrf_prod"}}},{"fvRsIgmpsn":{"attributes":{"tnIgmpSnoopPolName":""}}},{"fvRsBdToEpRet":{"attributes":{"resolveAct":"resolve","tnFvEpRetPolName":""}}}]}}]}
 bd = '''<?xml version="1.0" encoding="UTF-8"?>
-<imdata totalCount="1">
+<imdata totalCount="3">
   <fvBD arpFlood="no" descr="" dn="uni/tn-A40_n900/BD-core_bd_2" epMoveDetectMode="" limitIpLearnToSubnets="no" llAddr="::" mac="00:22:BD:F8:19:FF" multiDstPktAct="bd-flood" name="core_bd_2" ownerKey="" ownerTag="" unicastRoute="no" unkMacUcastAct="proxy" unkMcastAct="flood" vmac="not-applicable">
+    <fvRsBDToNdP tnNdIfPolName=""/>
+    <fvRsCtx tnFvCtxName="n900_vrf_prod"/>
+    <fvRsIgmpsn tnIgmpSnoopPolName=""/>
+    <fvRsBdToEpRet resolveAct="resolve" tnFvEpRetPolName=""/>
+  </fvBD>
+  <fvBD arpFlood="no" descr="" dn="uni/tn-A40_n900/BD-core_bd_3" epMoveDetectMode="" limitIpLearnToSubnets="no" llAddr="::" mac="00:22:BD:F8:19:FF" multiDstPktAct="bd-flood" name="core_bd_2" ownerKey="" ownerTag="" unicastRoute="no" unkMacUcastAct="proxy" unkMcastAct="flood" vmac="not-applicable">
+    <fvRsBDToNdP tnNdIfPolName=""/>
+    <fvRsCtx tnFvCtxName="n900_vrf_prod"/>
+    <fvRsIgmpsn tnIgmpSnoopPolName=""/>
+    <fvRsBdToEpRet resolveAct="resolve" tnFvEpRetPolName=""/>
+  </fvBD>
+  <fvBD arpFlood="no" descr="" dn="uni/tn-A40_n900/BD-core_bd_4" epMoveDetectMode="" limitIpLearnToSubnets="no" llAddr="::" mac="00:22:BD:F8:19:FF" multiDstPktAct="bd-flood" name="core_bd_2" ownerKey="" ownerTag="" unicastRoute="no" unkMacUcastAct="proxy" unkMcastAct="flood" vmac="not-applicable">
     <fvRsBDToNdP tnNdIfPolName=""/>
     <fvRsCtx tnFvCtxName="n900_vrf_prod"/>
     <fvRsIgmpsn tnIgmpSnoopPolName=""/>
@@ -49,4 +61,4 @@ sensor_url = base_url + 'mo.xml'
 get_response = requests.post(sensor_url, cookies=cookies,data=bd, verify=False)
 
 # display sensor data structure
-print get_response.json()
+print get_response

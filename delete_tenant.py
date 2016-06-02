@@ -2,6 +2,7 @@
 
 import json
 import requests
+import sys
 
 base_url = 'https://10.1.6.120/api/'
 
@@ -36,7 +37,7 @@ cookies['APIC-Cookie'] = auth_token
 #BD
 count = 0
 #bd = {"totalCount":"1","imdata":[{"fvBD":{"attributes":{"arpFlood":"no","descr":"","dn":"uni/tn-A40_'''+str(tenant_name)+'''/BD-core_bd_2","epMoveDetectMode":"","limitIpLearnToSubnets":"no","llAddr":"::","mac":"00:22:BD:F8:19:FF","multiDstPktAct":"bd-flood","name":"core_bd_2","ownerKey":"","ownerTag":"","unicastRoute":"no","unkMacUcastAct":"proxy","unkMcastAct":"flood","vmac":"not-applicable"},"children":[{"fvRsBDToNdP":{"attributes":{"tnNdIfPolName":""}}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"'''+str(tenant_name)+'''_vrf_prod"}}},{"fvRsIgmpsn":{"attributes":{"tnIgmpSnoopPolName":""}}},{"fvRsBdToEpRet":{"attributes":{"resolveAct":"resolve","tnFvEpRetPolName":""}}}]}}]}
-while count <= 10:
+while count <= sys.arg[1]:
     tenant_name = "n"+str(count)
     tenant = '''
     <?xml version="1.0" encoding="UTF-8"?>
@@ -50,4 +51,4 @@ while count <= 10:
 
     # display sensor data structure
     count = count+1
-    print get_response
+    print "Delete Tenant: "+tenant_name+" "+get_response

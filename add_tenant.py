@@ -18,12 +18,11 @@ json_credentials = json.dumps(name_pwd)
 
 # log in to API
 login_url = base_url + 'aaaLogin.json'
-print login_url
 post_response = requests.post("https://10.1.6.120/api/aaaLogin.json", data=json.dumps(name_pwd), verify=False)
 
-print post_response
+#print post_response
 
-"""
+
 # get token from login response structure
 auth = json.loads(post_response.text)
 login_attributes = auth['imdata'][0]['aaaLogin']['attributes']
@@ -39,4 +38,3 @@ get_response = requests.get(sensor_url, cookies=cookies, verify=False)
 
 # display sensor data structure
 print get_response.json()
-"""

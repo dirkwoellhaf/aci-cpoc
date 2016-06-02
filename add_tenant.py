@@ -106,4 +106,4 @@ while count <= sys.argv[1]:
 
     # display sensor data structure
     count = count+1
-    print "Create Tenant: "+tenant_name+" "+get_response
+    print "Create Tenant: "+tenant_name+" "+str(get_response)

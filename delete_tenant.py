@@ -51,4 +51,4 @@ while count <= sys.arg[1]:
 
     # display sensor data structure
     count = count+1
-    print "Delete Tenant: "+tenant_name+" "+get_response
+    print "Delete Tenant: "+tenant_name+" "+str(get_response)

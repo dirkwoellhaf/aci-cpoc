@@ -46,7 +46,7 @@ while count <= 10:
     '''
     # read a sensor, incorporating token in request
     sensor_url = base_url + 'mo/uni.xml'
-    get_response = requests.delete(sensor_url, cookies=cookies,data=tenant, verify=False)
+    get_response = requests.post(sensor_url, cookies=cookies,data=tenant, verify=False)
 
     # display sensor data structure
     count = count+1

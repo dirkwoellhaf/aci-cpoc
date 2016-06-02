@@ -37,15 +37,6 @@ cookies['APIC-Cookie'] = auth_token
 count = 0
 #bd = {"totalCount":"1","imdata":[{"fvBD":{"attributes":{"arpFlood":"no","descr":"","dn":"uni/tn-A40_'''+str(tenant_name)+'''/BD-core_bd_2","epMoveDetectMode":"","limitIpLearnToSubnets":"no","llAddr":"::","mac":"00:22:BD:F8:19:FF","multiDstPktAct":"bd-flood","name":"core_bd_2","ownerKey":"","ownerTag":"","unicastRoute":"no","unkMacUcastAct":"proxy","unkMcastAct":"flood","vmac":"not-applicable"},"children":[{"fvRsBDToNdP":{"attributes":{"tnNdIfPolName":""}}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"'''+str(tenant_name)+'''_vrf_prod"}}},{"fvRsIgmpsn":{"attributes":{"tnIgmpSnoopPolName":""}}},{"fvRsBdToEpRet":{"attributes":{"resolveAct":"resolve","tnFvEpRetPolName":""}}}]}}]}
 while count <= 10:
-    bd = '''<?xml version="1.0" encoding="UTF-8"?>
-    <imdata totalCount="1">
-      <fvBD arpFlood="no" descr="" dn="uni/tn-A40_'''+str(tenant_name)+'''/BD-core_bd_'''+str(count)+'''" epMoveDetectMode="" limitIpLearnToSubnets="no" llAddr="::" mac="00:22:BD:F8:19:FF" multiDstPktAct="bd-flood" name="core_bd_'''+str(count)+'''" ownerKey="" ownerTag="" unicastRoute="no" unkMacUcastAct="proxy" unkMcastAct="flood" vmac="not-applicable">
-        <fvRsBDToNdP tnNdIfPolName=""/>
-        <fvRsCtx tnFvCtxName="'''+str(tenant_name)+'''_vrf_prod"/>
-        <fvRsIgmpsn tnIgmpSnoopPolName=""/>
-        <fvRsBdToEpRet resolveAct="resolve" tnFvEpRetPolName=""/>
-      </fvBD>
-    </imdata>'''
     tenant_name = "n"+str(count)
     tenant = '''
     <?xml version="1.0" encoding="UTF-8"?>
